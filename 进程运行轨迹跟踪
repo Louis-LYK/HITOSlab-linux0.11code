@@ -1,0 +1,5 @@
+3.1 进程创建过程
+在C语言里，通过fork()创建一个进程，在linux内核中，由fork.c里的copy_process()完成创建，系统做以下三件事：
+(1)	首先申请一个空的task_struct内存空间；
+(2)	把该PCB的指针加入task[ ]数组；
+(3) 向PCB写入基本信息，如进程状态，进程ID，分配的时间片，signal，alarm,priority等；
